@@ -1,14 +1,79 @@
 {
-    ExistingVC: {
-        IPAddress: "10.9.24.31",
-        Hostname: "vc-tpe.sysage.com",
-        Username: "administrator@sysage.sso",
-        Password: "VM@sysage123"
+    "ExistingVC": {
+        "IPAddress": "10.9.24.31",
+        "Hostname": "vc-tpe.sysage.com",
+        "Username": "administrator@sysage.sso",
+        "Password": "VM@sysage123"
     },
-    DeploymentParameters: {
-        Target: "VCENTER",
-        NSXTManagerOVA: "C:\shawnho\nsxt\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
-        NSXTControllerOVA: "C:\shawnho\nsxt\nsx-controller-2.2.0.0.0.8680774.ova",
-        NSXTEdgeOVA: "C:\shawnho\nsxt\nsx-edge-2.2.0.0.0.8680783.ova"
+    "vSphere_Deployment": {
+        "Target": "VCENTER",
+        "DeployTo": {
+            "VirtualSwitchType": "VDS",
+            "VMNetwork": "vxw-dvs-24-virtualwire-351-sid-5003-Shawn",
+            "Datastore": "vsanDataStore",
+            "NetMask": "255.255.255.0",
+            "DNS": "10.9.24.31",
+            "NTP": "pool.ntp.org",
+            "Cluster": "democenter",
+            "VMDomain": "pks.sysage",
+            "VMSyslog": ""
+        },
+        "NestedESXiResources": {
+            "FilePath": "C:\\shawnho\\vsphere\\Nested_ESXi6.5u2_Appliance_Template_v1.ova",
+            "vCPU": 8,
+            "vMem": 32,
+            "CachingDisk": 4,
+            "CapacityDisk": 60,
+            "NestedIPs": {
+                "esxi65-1": "192.168.168.7",
+                "esxi65-2": "192.168.168.8",
+                "esxi65-3": "192.168.168.9"
+            }
+        },
+        "NewVCSA":{
+            "FilePath": "C:\\shawnho\\vsphere\\VMware-VCSA-65",
+            "Size": "tiny",
+            "Name": "vcsa65-1",
+            "IPAddress": "192.168.168.20",
+            "NetMask": "24",
+            "SSODomain": "vsphere.local",
+            "SSOPassword": "VMware1!",
+            "SSHEnable": "True",
+            "DataCenter": "DataCenter",
+            "Cluster": "PKS-Cluster",
+            "Size2MemoryStorageMap": {
+                "tiny": {
+                    "CPU": 2,
+                    "MEM": 10,
+                    "DISK": 250
+                },
+                "small": {
+                    "CPU": 4,
+                    "MEM": 16,
+                    "DISK": 290
+                },
+                "medium": {
+                    "CPU": 8,
+                    "MEM": 24,
+                    "DISK": 425
+                },
+                "large": {
+                    "CPU": 16,
+                    "MEM": 32,
+                    "DISK": 640
+                },
+                "xlarge": {
+                    "CPU": 24,
+                    "MEM": 48,
+                    "DISK": 980
+                }
+            }
+        }
+    },
+    "NSXT_Deployment": {
+        "Target": "VCENTER",
+        "NSXTManagerOVA": "C:\\shawnho\\nsxt\\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
+        "NSXTControllerOVA": "C:\\shawnho\\nsxt\\nsx-controller-2.2.0.0.0.8680774.ova",
+        "NSXTEdgeOVA": "C:\\shawnho\\nsxt\\nsx-edge-2.2.0.0.0.8680783.ova"
     }
 }
