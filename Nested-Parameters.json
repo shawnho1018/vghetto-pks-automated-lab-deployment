@@ -1,0 +1,14 @@
+{
+    ExistingVC: {
+        IPAddress: "10.9.24.31",
+        Hostname: "vc-tpe.sysage.com",
+        Username: "administrator@sysage.sso",
+        Password: "VM@sysage123"
+    },
+    DeploymentParameters: {
+        Target: "VCENTER",
+        NSXTManagerOVA: "C:\shawnho\nsxt\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
+        NSXTControllerOVA: "C:\shawnho\nsxt\nsx-controller-2.2.0.0.0.8680774.ova",
+        NSXTEdgeOVA: "C:\shawnho\nsxt\nsx-edge-2.2.0.0.0.8680783.ova"
+    }
+}
