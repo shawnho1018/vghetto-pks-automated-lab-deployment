@@ -1,0 +1,277 @@
+[10-07-2018_11:19:54] Adding vmnic2/vmnic3 to  ...
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 3    Vmxnet3    vxw-dvs-2... 00:50:56:b2:62:24      False
+
+
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 4    Vmxnet3    vxw-dvs-2... 00:50:56:b2:9f:53      False
+
+
+[10-07-2018_11:19:57] Updating vCPU Count to 8 & vMEM to 32 GB ...
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vesxi65-3            PoweredOff 8        32.000
+
+
+[10-07-2018_11:19:59] Updating vSAN Caching VMDK size to 4 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+4.000           Persistent           ...5b-4462-4a4c-fcc9-90e2ba8a95e4/vesxi65-3_1.vmdk
+
+
+[10-07-2018_11:20:02] Updating vSAN Capacity VMDK size to 60 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+60.000          Persistent           ...5b-4462-4a4c-fcc9-90e2ba8a95e4/vesxi65-3_2.vmdk
+
+
+[10-07-2018_11:20:05] Powering On vesxi65-3 ...
+[10-07-2018_11:38:52] Retrieve Parameters from viConnection
+[10-07-2018_11:38:55] VSAN Datastore detected, enabling Fake SCSI Reservations ...
+
+Name                 Value                Type                 Description
+----                 -----                ----                 -----------
+VSAN.FakeSCSIRese... 1                    VMHost               
+
+
+[10-07-2018_11:38:56] Deploying Nested ESXi VM vesxi-01.pks.sysage ...
+[10-07-2018_11:39:31] Adding vmnic2/vmnic3 to  ...
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 3    Vmxnet3    vxw-dvs-2... 00:50:56:b2:c7:66      False
+
+
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 4    Vmxnet3    vxw-dvs-2... 00:50:56:b2:3e:22      False
+
+
+[10-07-2018_11:39:35] Updating vCPU Count to 8 & vMEM to 32 GB ...
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vesxi-01.pks.sysage  PoweredOff 8        32.000
+
+
+[10-07-2018_11:39:36] Updating vSAN Caching VMDK size to 4 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+4.000           Persistent           ...18-0914-90e2ba8a95e4/vesxi-01.pks.sysage_1.vmdk
+
+
+[10-07-2018_11:39:39] Updating vSAN Capacity VMDK size to 60 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+60.000          Persistent           ...18-0914-90e2ba8a95e4/vesxi-01.pks.sysage_2.vmdk
+
+
+[10-07-2018_11:39:43] Powering On vesxi-01.pks.sysage ...
+[10-07-2018_11:39:43] Deploying Nested ESXi VM vesxi-02.pks.sysage ...
+[10-07-2018_11:40:24] Adding vmnic2/vmnic3 to  ...
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 3    Vmxnet3    vxw-dvs-2... 00:50:56:b2:32:0d      False
+
+
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 4    Vmxnet3    vxw-dvs-2... 00:50:56:b2:29:29      False
+
+
+[10-07-2018_11:40:27] Updating vCPU Count to 8 & vMEM to 32 GB ...
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vesxi-02.pks.sysage  PoweredOff 8        32.000
+
+
+[10-07-2018_11:40:28] Updating vSAN Caching VMDK size to 4 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+4.000           Persistent           ...09-e679-90e2ba8a95e4/vesxi-02.pks.sysage_1.vmdk
+
+
+[10-07-2018_11:40:29] Updating vSAN Capacity VMDK size to 60 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+60.000          Persistent           ...09-e679-90e2ba8a95e4/vesxi-02.pks.sysage_2.vmdk
+
+
+[10-07-2018_11:40:32] Powering On vesxi-02.pks.sysage ...
+[10-07-2018_11:40:32] Deploying Nested ESXi VM vesxi-03.pks.sysage ...
+[10-07-2018_11:41:12] Adding vmnic2/vmnic3 to  ...
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 3    Vmxnet3    vxw-dvs-2... 00:50:56:b2:22:a5      False
+
+
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 4    Vmxnet3    vxw-dvs-2... 00:50:56:b2:ce:88      False
+
+
+[10-07-2018_11:41:15] Updating vCPU Count to 8 & vMEM to 32 GB ...
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vesxi-03.pks.sysage  PoweredOff 8        32.000
+
+
+[10-07-2018_11:41:16] Updating vSAN Caching VMDK size to 4 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+4.000           Persistent           ...e7-71fa-90e2ba8a95e4/vesxi-03.pks.sysage_1.vmdk
+
+
+[10-07-2018_11:41:19] Updating vSAN Capacity VMDK size to 60 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+60.000          Persistent           ...e7-71fa-90e2ba8a95e4/vesxi-03.pks.sysage_2.vmdk
+
+
+[10-07-2018_11:41:26] Powering On vesxi-03.pks.sysage ...
+[10-07-2018_11:48:04] Deploying Nested ESXi VM vesxi-01.pks.sysage ...
+[10-07-2018_11:48:42] Adding vmnic2/vmnic3 to  ...
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 3    Vmxnet3    vxw-dvs-2... 00:50:56:b2:53:7e      False
+
+
+
+Name                 Type       NetworkName  MacAddress         WakeOnLan
+                                                                  Enabled
+----                 ----       -----------  ----------         ---------
+Network adapter 4    Vmxnet3    vxw-dvs-2... 00:50:56:b2:aa:01      False
+
+
+[10-07-2018_11:48:46] Updating vCPU Count to 8 & vMEM to 32 GB ...
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vesxi-01.pks.sysage  PoweredOff 8        32.000
+
+
+[10-07-2018_11:48:47] Updating vSAN Caching VMDK size to 4 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+4.000           Persistent           ...79-61de-90e2ba8a95e4/vesxi-01.pks.sysage_1.vmdk
+
+
+[10-07-2018_11:48:50] Updating vSAN Capacity VMDK size to 60 GB ...
+
+CapacityGB      Persistence                                                    Filename
+----------      -----------                                                    --------
+60.000          Persistent           ...79-61de-90e2ba8a95e4/vesxi-01.pks.sysage_2.vmdk
+
+
+[10-07-2018_11:48:59] Powering On vesxi-01.pks.sysage ...
+[10-07-2018_11:48:59] Deploying Nested ESXi VM vesxi-02.pks.sysage ...
+[10-07-2018_11:49:04] Adding vmnic2/vmnic3 to  ...
+[10-07-2018_11:49:04] Updating vCPU Count to 8 & vMEM to 32 GB ...
+[10-07-2018_11:49:04] Updating vSAN Caching VMDK size to 4 GB ...
+[10-07-2018_11:49:04] Updating vSAN Capacity VMDK size to 60 GB ...
+[10-07-2018_11:49:04] Powering On vesxi-02.pks.sysage ...
+[10-07-2018_11:49:04] Deploying Nested ESXi VM vesxi-03.pks.sysage ...
+[10-07-2018_11:49:08] Adding vmnic2/vmnic3 to  ...
+[10-07-2018_11:49:08] Updating vCPU Count to 8 & vMEM to 32 GB ...
+[10-07-2018_11:49:09] Updating vSAN Caching VMDK size to 4 GB ...
+[10-07-2018_11:49:09] Updating vSAN Capacity VMDK size to 60 GB ...
+[10-07-2018_11:49:09] Powering On vesxi-03.pks.sysage ...
+[10-07-2018_11:52:38] Connecting to the new VCSA ...
+[10-07-2018_11:52:40] Creating Datacenter DataCenter ...
+
+Name
+----
+DataCenter
+
+
+[10-07-2018_11:52:41] Creating new VSAN Cluster PKS-Cluster ...
+
+Name                           HAEnabled  HAFailover DrsEnabled DrsAutomationLevel
+                                          Level
+----                           ---------  ---------- ---------- ------------------
+PKS-Cluster                    False      1          True       FullyAutomated
+
+
+[10-07-2018_11:52:49] Adding ESXi host 192.168.168.1 to Cluster ...
+
+Name                 ConnectionState PowerState NumCpu CpuUsageMhz CpuTotalMhz   MemoryUsageGB   MemoryTotalGB Version
+----                 --------------- ---------- ------ ----------- -----------   -------------   ------------- -------
+192.168.168.1        Connected       PoweredOn       8           0       16000           0.000          31.999   6.5.0
+
+
+[10-07-2018_11:52:58] Adding ESXi host 192.168.168.2 to Cluster ...
+
+Name                 ConnectionState PowerState NumCpu CpuUsageMhz CpuTotalMhz   MemoryUsageGB   MemoryTotalGB Version
+----                 --------------- ---------- ------ ----------- -----------   -------------   ------------- -------
+192.168.168.2        Connected       PoweredOn       8           0       16000           0.000          31.999   6.5.0
+
+
+[10-07-2018_11:53:06] Adding ESXi host 192.168.168.3 to Cluster ...
+
+Name                 ConnectionState PowerState NumCpu CpuUsageMhz CpuTotalMhz   MemoryUsageGB   MemoryTotalGB Version
+----                 --------------- ---------- ------ ----------- -----------   -------------   ------------- -------
+192.168.168.3        Connected       PoweredOn       8           0       16000           0.000          31.999   6.5.0
+
+
+[10-07-2018_11:53:30] Enabling VSAN & disabling VSAN Health Check ...
+
+Cluster              VsanEnabled  IsStretchedCluster   Last HCL Updated
+-------              -----------  ------------------   ----------------
+PKS-Cluster          True         False                10/7/2018 03:42:00
+
+
+[10-07-2018_11:53:53] Querying ESXi host disks to create VSAN Diskgroups ...
+[10-07-2018_11:53:53] Creating VSAN DiskGroup for 192.168.168.1 ...
+
+Name                                               VMHost               DiskGroupType
+----                                               ------               -------------
+Disk group (02000000006000c29c405f5db3fead46618... 192.168.168.1        AllFlash
+
+
+[10-07-2018_11:54:39] Querying ESXi host disks to create VSAN Diskgroups ...
+[10-07-2018_11:54:40] Creating VSAN DiskGroup for 192.168.168.2 ...
+
+Name                                               VMHost               DiskGroupType
+----                                               ------               -------------
+Disk group (02000000006000c29cf69e5d0dd951fe61a... 192.168.168.2        AllFlash
+
+
+[10-07-2018_11:55:25] Querying ESXi host disks to create VSAN Diskgroups ...
+[10-07-2018_11:55:25] Creating VSAN DiskGroup for 192.168.168.3 ...
+
+Name                                               VMHost               DiskGroupType
+----                                               ------               -------------
+Disk group (02000000006000c2974a32012fae0cd6bb4... 192.168.168.3        AllFlash
+
+

@@ -1,6 +1,6 @@
 {
     "ExistingVC": {
-        "IPAddress": "10.9.24.31",
+        "IPAddress": "10.9.24.34",
         "Hostname": "vc-tpe.sysage.com",
         "Username": "administrator@sysage.sso",
         "Password": "VM@sysage123"
@@ -10,8 +10,11 @@
         "DeployTo": {
             "VirtualSwitchType": "VDS",
             "VMNetwork": "vxw-dvs-24-virtualwire-351-sid-5003-Shawn",
+            "privateNetwork": "vxw-dvs-24-virtualwire-371-sid-5004-Shawn-PKS",
+            "DataCenter": "DC-TPE",
             "Datastore": "vsanDataStore",
             "NetMask": "255.255.255.0",
+            "Gateway": "192.168.168.254",
             "DNS": "10.9.24.31",
             "NTP": "pool.ntp.org",
             "Cluster": "democenter",
@@ -24,20 +27,25 @@
             "vMem": 32,
             "CachingDisk": 4,
             "CapacityDisk": 60,
-            "NestedIPs": {
-                "esxi65-1": "192.168.168.7",
-                "esxi65-2": "192.168.168.8",
-                "esxi65-3": "192.168.168.9"
-            }
+            "Password": "VMware1!",
+            "SSHEnable": "true",
+            "NestedIPs": [
+                {"vesxi-01.pks.sysage": "192.168.168.1"},
+                {"vesxi-02.pks.sysage": "192.168.168.2"},
+                {"vesxi-03.pks.sysage": "192.168.168.3"}
+            ]
         },
         "NewVCSA":{
             "FilePath": "C:\\shawnho\\vsphere\\VMware-VCSA-65",
             "Size": "tiny",
             "Name": "vcsa65-1",
             "IPAddress": "192.168.168.20",
-            "NetMask": "24",
+            "Prefix": "24",
+            "HostName": "vcsa.pks.sysage",
             "SSODomain": "vsphere.local",
             "SSOPassword": "VMware1!",
+            "SiteName": "PKS",
+            "RootPassword": "VMware1!",
             "SSHEnable": "True",
             "DataCenter": "DataCenter",
             "Cluster": "PKS-Cluster",
@@ -71,9 +79,75 @@
         }
     },
     "NSXT_Deployment": {
-        "Target": "VCENTER",
-        "NSXTManagerOVA": "C:\\shawnho\\nsxt\\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
         "NSXTControllerOVA": "C:\\shawnho\\nsxt\\nsx-controller-2.2.0.0.0.8680774.ova",
-        "NSXTEdgeOVA": "C:\\shawnho\\nsxt\\nsx-edge-2.2.0.0.0.8680783.ova"
+        "NSXTEdgeOVA": "C:\\shawnho\\nsxt\\nsx-edge-2.2.0.0.0.8680783.ova",
+        "DeployTo": {
+            "VirtualSwitchType": "VDS",
+            "VMNetwork": "vxw-dvs-24-virtualwire-351-sid-5003-Shawn",
+            "privateNetwork": "vxw-dvs-24-virtualwire-371-sid-5004-Shawn-PKS",
+            "DataCenter": "DC-TPE",
+            "Datastore": "vsanDataStore",
+            "NetMask": "255.255.255.0",
+            "Gateway": "192.168.168.254",
+            "DNS": "10.9.24.31",
+            "NTP": "pool.ntp.org",
+            "Cluster": "democenter",
+            "VMDomain": "pks.sysage",
+            "VMSyslog": ""
+        },
+        "NewNSXEdge": {
+            "vCPU": "8",
+            "vMEM": "16",
+            "EdgeIPs": [
+                {"edge01": "192.168.168.34"}
+            ]
+        },
+        "NewNSXController": {
+            "vCPU": "2",
+            "vMEM": "6",
+            "SharedSecret": "s3cR3ctz",
+            "ControllerIPs": [
+                {"nsxt-ctr01": "192.168.168.31"},
+                {"nsxt-ctr02": "192.168.168.32"},
+                {"nsxt-ctr03": "192.168.168.33"}
+            ] 
+        },
+        "NewNSXTMgr": {
+            "RootPassword": "VMware1!",
+            "FilePath": "C:\\shawnho\\nsxt\\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
+            "vCPU": "2",
+            "vMEM": "8",
+            "Name": "nsx-mgr",
+            "hostname": "nsx-mgr.pks.sysage",
+            "IPAddress": "192.168.168.30",
+            "AdminUser": "admin",
+            "AdminPassword": "VMware1!",
+            "Auditor": "audit",
+            "AuditorPassword": "VMware1!",
+            "SSHEnable": "True",
+            "SSHEnableRootLogin": "True",
+            "TunnelEndPointPool": {
+                "Name": "ESXi-VTEP-POOL",
+                "Description": "Tunnel EndPoint for ESXi Transport Nodes",
+                "IPRangeStart": "100.0.0.10",
+                "IPRangeEnd": "100.0.0.40",
+                "CIDR": "10.0.0.0/24",
+                "Gateway": "100.0.0.1"
+            },
+            "LoadBalancerPool": {
+                "Name": "Load-Balancer-Pool",
+                "Description": "IP Pool for load balancer",
+                "IPRangeStart": "192.168.168.40",
+                "IPRangeEnd": "192.168.168.60",
+                "CIDR": "192.168.168.0/24"
+            },
+            "IPBlock": {
+                "Name": "PKS-IP-Block",
+                "Network": "168.95.0.0/16"
+            }
+        }
+    },
+    "OPS_Deployment": {
+        "OPSManagerOVA": ""
     }
 }
