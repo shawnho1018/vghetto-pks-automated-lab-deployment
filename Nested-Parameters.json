@@ -79,8 +79,6 @@
         }
     },
     "NSXT_Deployment": {
-        "NSXTControllerOVA": "C:\\shawnho\\nsxt\\nsx-controller-2.2.0.0.0.8680774.ova",
-        "NSXTEdgeOVA": "C:\\shawnho\\nsxt\\nsx-edge-2.2.0.0.0.8680783.ova",
         "DeployTo": {
             "VirtualSwitchType": "VDS",
             "VMNetwork": "vxw-dvs-24-virtualwire-351-sid-5003-Shawn",
@@ -95,17 +93,37 @@
             "VMDomain": "pks.sysage",
             "VMSyslog": ""
         },
-        "NewNSXEdge": {
+        "NewNSXTEdge": {
+            "size": "large",
             "vCPU": "8",
             "vMEM": "16",
+            "disk": "120",
+            "Password": "VMware1!",
+            "AdminUser": "admin",
+            "AdminPassword": "VMware1!",
+            "Auditor": "audit",
+            "AuditorPassword": "VMware1!",              
+            "FilePath": "C:\\shawnho\\nsxt\\nsx-edge-2.2.0.0.0.8680783.ova",
+            "SSHEnable": "True",
+            "SSHEnableRootLogin": "True",            
             "EdgeIPs": [
-                {"edge01": "192.168.168.34"}
+                {"edge01": "192.168.168.34"},
+                {"edge02": "192.168.168.35"}
             ]
         },
-        "NewNSXController": {
+        "NewNSXTController": {
             "vCPU": "2",
             "vMEM": "6",
+            "disk": "120",
             "SharedSecret": "s3cR3ctz",
+            "Password": "VMware1!",
+            "AdminUser": "admin",
+            "AdminPassword": "VMware1!",
+            "Auditor": "audit",
+            "AuditorPassword": "VMware1!",            
+            "FilePath": "C:\\shawnho\\nsxt\\nsx-controller-2.2.0.0.0.8680774.ova",
+            "SSHEnable": "True",
+            "SSHEnableRootLogin": "True",
             "ControllerIPs": [
                 {"nsxt-ctr01": "192.168.168.31"},
                 {"nsxt-ctr02": "192.168.168.32"},
@@ -115,8 +133,10 @@
         "NewNSXTMgr": {
             "RootPassword": "VMware1!",
             "FilePath": "C:\\shawnho\\nsxt\\nsx-unified-appliance-2.2.0.0.0.8680778.ova",
+            "size": "small",
             "vCPU": "2",
             "vMEM": "8",
+            "disk": "160",
             "Name": "nsx-mgr",
             "hostname": "nsx-mgr.pks.sysage",
             "IPAddress": "192.168.168.30",
@@ -131,7 +151,7 @@
                 "Description": "Tunnel EndPoint for ESXi Transport Nodes",
                 "IPRangeStart": "100.0.0.10",
                 "IPRangeEnd": "100.0.0.40",
-                "CIDR": "10.0.0.0/24",
+                "CIDR": "100.0.0.0/24",
                 "Gateway": "100.0.0.1"
             },
             "LoadBalancerPool": {
@@ -144,6 +164,40 @@
             "IPBlock": {
                 "Name": "PKS-IP-Block",
                 "Network": "168.95.0.0/16"
+            },
+            "TransportZone": {
+                "OverlayTZName": "TZ-Overlay",
+                "OverlayTZSwitch": "TZSwitch-Overlay",
+                "vLANTZName": "TZ-VLAN",
+                "vLANTZSwitch": "TZSwitch-vLAN"
+            },
+            "UplinkProfile": {
+                "ESXi": {
+                    "Name": "ESXi-Uplink-Profile",
+                    "ActivepNIC": "vmnic2",
+                    "TransportVLAN": "0",
+                    "ProfilePolicy": "FAILOVER_ORDER",
+                    "MTU": "1600"
+                },
+                "Edge": {
+                    "Name": "Edge-Uplink-Profile",
+                    "ActivepNIC": "uplink-1",
+                    "TransportVLAN": "0",
+                    "ProfilePolicy": "FAILOVER_ORDER",
+                    "MTU": "1600",
+                    "OverlayvNIC": "fp-eth0",
+                    "VLANvNIC": "fp-eth1"
+                }
+            },
+            "LogicalSwitch": {
+                "Uplink": {
+                    "Name": "Uplink-LS",
+                    "VLAN": "0"
+                },
+                "K8sMgmt": {
+                    "Name": "K8SMgmt-LS",
+                    "ReplicationMode": "MTEP"
+                }
             }
         }
     },

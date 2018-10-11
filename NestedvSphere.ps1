@@ -69,7 +69,11 @@ $config.vSphere_Deployment.NestedESXiResources.NestedIPs.GetEnumerator() | Forea
     My-Logger "Powering On $vmname ..."
     $vm | Start-Vm -RunAsync | Out-Null
 }
-
+###
+$cluster = Get-Cluster -Server $viConnection -Name $config.vSphere_Deployment.DeployTo.Cluster | Select -First 1
+$datacenter = $cluster | Get-Datacenter
+$vmhost = $cluster | Get-VMHost | Select -First 1
+$datastore = Get-Datastore -Server $viConnection -Name $config.vSphere_Deployment.DeployTo.Datastore | Select -First 1
 ### Deploy vCenter ###
 $config_vcsa = (Get-Content -Raw "$($config.vSphere_Deployment.NewVCSA.FilePath)\vcsa-cli-installer\templates\install\embedded_vCSA_on_VC.json") | convertfrom-json
 $config_vcsa.'new.vcsa'.vc.hostname = $config.ExistingVC.Hostname

@@ -11,6 +11,13 @@ Function My-Logger {
     $logMessage = "[$timeStamp] $message"
     $logMessage | Out-File -Append -LiteralPath $verboseLogFile
 }
+Function login {
+    param(
+        [Parameter(Mandatory=$true)][String]$username,
+        [Parameter(Mandatory=$true)][String]$password,
+        [Parameter(Mandatory=$true)][String]$command
+    )
+}
 Function Set-VMKeystrokes {
     <#
         Please see http://www.virtuallyghetto.com/2017/09/automating-vm-keystrokes-using-the-vsphere-api-powercli.html for more details
